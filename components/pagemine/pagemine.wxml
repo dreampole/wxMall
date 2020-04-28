@@ -1,0 +1,41 @@
+<!--components/pagemine/pagemine.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="page-mine">
+  <view class="page-mine-topbar">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+  </view>
+  <view class="mine">
+    <view class="user">
+      <block wx:if="{{!hasUserInfo}}">
+        <image src="{{userImageNo}}"></image>
+        <button class="get-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+      </block>
+      <block wx:else>
+        <image src="{{userImage}}"></image>
+        <text>{{userInfo.nickName}}<text>金牌会员</text></text>
+        <view class="exit" bindtap="exitUserInfo">
+          <icon class="iconfont iconfanhui1"></icon>
+          <text>退出登录</text>
+        </view>
+      </block>
+    </view>
+    <view class="order">
+      <view wx:for="{{orderInfo}}" wx:key="id" bindtap="showDetial">
+        <icon class="{{item.icon}}"></icon>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="coupon">
+      <view wx:for="{{couponsInfo}}" wx:key="id" bindtap="showDetial">
+        <text wx:if="{{!hasUserInfo}}">-</text>
+        <text wx:else>{{item.qty}}<text>{{item.unit}}</text></text>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="other">
+      <text>…</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--components/searchbar/searchbar.wxml-->
+<view class="search-bar">
+  <view class="btn {{darkColor?'dark':''}}" hidden="{{!btn1Show}}">
+    <icon class="iconfont icon2"></icon>
+  </view>
+  <view class="search" bindtap="goSearchPage">
+    <icon class="iconfont iconsousuo1"></icon>
+    <text>搜索</text>
+  </view>
+  <view class="btn {{darkColor?'dark':''}}" hidden="{{!btn2Show}}">
+    <icon class="iconfont iconshaixuan1" bindtap="goFilterPage"></icon>
+  </view>
+</view>

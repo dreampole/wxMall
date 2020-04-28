@@ -1,0 +1,85 @@
+<!--pages/search/search.wxml-->
+<view class="search-page" wx:if="{{isSearch}}">
+  <!-- 搜索界面 -->
+  <view class="search">
+    <input type="text" placeholder="搜索" value="{{keyWord}}" bindinput="searchInput" confirm-type="search" bindconfirm="searchGo" focus/>
+    <icon class="iconfont iconshanchu" bindtap="clearKeyWord" wx:if="{{keyWord != null && keyWord.length > 0}}"></icon>
+  </view>
+  <view class="history" wx:if="{{searchHistory != null && searchHistory.length > 0}}">
+    <view class="title">
+      <text>搜索历史</text>
+      <icon class="iconfont iconqingkong" bindtap="clearHistory"></icon>
+    </view>
+    <view class="words">
+      <text wx:for="{{searchHistory}}" wx:key="word" data-word="{{item.word}}" bindtap="searchByWord">{{item.word}}</text>
+    </view>
+  </view>
+  <view class="history">
+    <view class="title">
+      <text>热搜商品</text>
+      <icon class="iconfont iconhot"></icon>
+      <text class="loadhot" bindtap="loadHot">换一批</text>
+    </view>
+    <view class="words">
+      <text wx:for="{{searchHot}}" wx:key="word" data-word="{{item.word}}" bindtap="searchByWord">{{item.word}}</text>
+    </view>
+  </view>
+</view>
+<!-- 筛选界面 -->
+<view class="filter-page" wx:if="{{isFilter}}">
+  <view class="close" wx:if="{{showBackBtn}}">
+    <view bindtap="closeFilter">
+      <icon class="iconfont iconfanhui1"></icon>
+      <text>返回查询结果</text>
+    </view>
+  </view>
+  <view class="conditions-price" style="margin-top:{{showBackBtn?'90rpx':'0'}}">
+    <view>
+      <view class="title">
+        <text>价格区间</text>
+      </view>
+      <view class="input">
+        <input type="number" placeholder="最低价" value="{{leftPrice}}"/>
+        <text>—</text>
+        <input type="number" placeholder="最高价" value="{{rightPrice}}"/>
+      </view>
+      <view class="pricebtn">
+        <text class="{{item.selected?'active':''}}" wx:for="{{conditionsPrice}}" wx:key="id" data-id="{{item.id}}" bindtap="priceSelected">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="conditions">
+    <view wx:for="{{filterConditions}}" wx:key="id">
+      <text class="title">{{item.title}}</text>
+      <text class="words {{item.selected?'active':''}}" wx:for="{{item.words}}" wx:key="word" data-word="{{item.word}}" bindtap="wordSelected">{{item.word}}</text>
+    </view>
+  </view>
+  <view class="btn">
+    <view bindtap="resetSelected"><text>重置条件</text></view>
+    <view bindtap="filterGo"><text>确认查询</text></view>
+  </view>
+</view>
+<!-- 结果界面 -->
+<view class="result-page" wx:if="{{isResult}}">
+  <view class="search-bar">
+    <view class="btn {{darkColor?'dark':''}}" wx:if="{{btn1Show}}">
+      <icon class="iconfont icon2"></icon>
+    </view>
+    <view class="search" bindtap="goSearchPage">
+      <block wx:if="{{keyWord != null && keyWord.length > 0}}">
+        <text>{{keyWord}}</text>
+        <icon class="iconfont iconshanchu" bindtap="clearKeyWord"></icon>
+      </block>
+      <block wx:else>
+        <icon class="iconfont iconsousuo1"></icon>
+        <text>搜索</text>
+      </block>
+    </view>
+    <view class="btn {{darkColor?'dark':''}}" wx:if="{{btn2Show}}">
+      <icon class="iconfont iconshaixuan1" bindtap="goFilterPage"></icon>
+    </view>
+  </view>
+  <view>
+    <item-list searchData="{{searchObj}}" class="item-list" />
+  </view>
+</view>

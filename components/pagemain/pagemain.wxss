@@ -1,0 +1,165 @@
+/* components/pagemain/pagemain.wxss */
+@import '/app.wxss';
+.page-main {
+  background-color: #eee;
+  margin-bottom:110rpx;
+}
+/* topbar */
+.page-main-topbar {
+  width:100%;
+  height:220rpx;
+  position: fixed;
+  top:0;left:0;
+  background-color: rgb(0, 152, 207);
+  z-index: 99;
+}
+.page-main-topbar .title{
+  margin-top:70rpx;
+  font-weight: 900;
+  /* font-family: '仿宋'; */
+  color:#fff;
+}
+.page-main-topbar .search-bar{
+  width:100%;
+}
+/* 热搜 */
+.page-main-hotkey {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding:10rpx;
+  background-color: rgb(0, 152, 207);
+  color:#fff;
+  font-size: 24rpx;
+  font-weight: 900;
+  height: 220rpx;
+  margin-top:220rpx;
+}
+.page-main-hotkey .hot-words{
+  background-color: rgba(210,210,210,0.3);
+  text-align: center;
+  padding:5rpx;
+  border-radius: 20rpx;
+  font-weight: 300;
+  width: 145rpx;
+  white-space:nowrap;
+}
+/* 轮播广告 */
+.page-main-gg {
+  margin:0 auto;
+  background-color: #fff;
+}
+.page-main-gg swiper{
+  width:90%;
+  height:300rpx;
+  margin-top:-150rpx;
+}
+.page-main-gg image{
+  width:100%;
+  height:100%;
+  border-radius: 10rpx;
+}
+/* 地址栏 */
+.page-main-addr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 85rpx;
+  background-color: #fff;
+  margin:20rpx 0;
+}
+.page-main-addr view{
+  flex:1;
+}
+.page-main-addr .text{
+  flex:9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color:#666;
+}
+.page-main-addr .text icon{
+  font-weight: 900;
+  margin-top: -10rpx;
+}
+/* 联系我们 */
+.page-main-contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  background-color: #fff;
+  /* margin:20rpx 0; */
+  padding:0 30rpx;
+}
+.page-main-contact view{
+  align-items: center;
+  justify-content: center;
+}
+.page-main-contact image{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 10rpx;
+}
+.page-main-contact text{
+  color:#999;
+}
+.page-main-contact .icon{
+  display: flex;
+  flex-direction: row;
+}
+.page-main-contact .icon icon{
+  font-size: 48rpx;
+  margin:0 25rpx;
+}
+.page-main-contact .icon icon:nth-child(1){
+  color:rgb(0, 152, 207);
+}
+.page-main-contact .icon icon:nth-child(2){
+  color:rgb(7, 192, 98);
+}
+/* 快捷按钮 */
+.page-main-fastbtn {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding:15rpx 0;
+}
+.page-main-fastbtn .btn-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin:10rpx;
+}
+.page-main-fastbtn .btn view{
+  display: flex;
+  flex-direction: column;
+}
+.page-main-fastbtn view text:nth-child(1){
+  display: block;
+  width:100rpx;
+  height:70rpx;
+  border-radius: 50%;
+  text-align: center;
+  padding-top:30rpx;
+  color:#fff;
+  background-color: rgb(0, 152, 207);
+  margin-bottom: 10rpx;
+}
+.page-main-fastbtn view text:nth-child(2){
+  font-size: 24rpx;
+  color:#999;
+}
+/* view */
+.page-main-view{
+  margin-top:20rpx;
+  background-color: #fff;
+  display: block;
+  width:100%;
+}

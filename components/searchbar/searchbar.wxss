@@ -1,0 +1,56 @@
+/* components/searchbtn/searchbtn.wxss */
+@import '/app.wxss';
+.search-bar {
+  width:100%;
+  height:90rpx;
+  background-color: rgba(0,0,0,0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.search-bar .search{
+  flex:8;
+  height:55rpx;
+  margin: 0 20rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar .search icon{
+  vertical-align: top;
+  color:#aaa;
+  margin-top:-15rpx;
+  margin-right:5rpx;
+  font-weight: 900;
+}
+.search-bar text{
+  font-size: 28rpx;
+  color:#aaa;
+}
+.search-bar .btn{
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar .btn:nth-child(1) {
+  align-items: flex-end;
+}
+.search-bar .btn:nth-child(3) {
+  align-items: flex-start;
+}
+.search-bar .btn icon{
+  vertical-align: middle;
+  color:#fff;
+  font-size: 42rpx;
+  margin-top: -5rpx;
+  text-shadow: 1px 1px 10px #ccc;
+}
+.search-bar .btn.dark icon{
+  font-weight:900;
+  color:#aaa;
+}

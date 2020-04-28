@@ -1,0 +1,13 @@
+<!--components/pagegoods/pagegoods.wxml-->
+<view class="page-goods">
+  <view class="page-goods-topbar">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <search-bar class="search-bar" btn1Show="{{false}}" btn2Show="{{true}}" darkColor="{{true}}"></search-bar>
+  </view>
+  <view class="page-goods-typelist">
+    <type-list />
+  </view>
+</view>
+

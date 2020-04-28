@@ -1,0 +1,134 @@
+// 数据类型转换
+var filters = {    
+  toFix: function (value) {   
+    if (value == null) {
+      return value
+    } else if (isNaN(value*1)) {
+      return value
+    } else {
+      return value.toFixed(2) 
+    }  
+  },
+  toStr: function (value) {       
+      return value.toString()
+  },
+  toNum: function (value) {       
+      return value.toNumber()
+  },
+}
+// 数据长度转换
+var relength = {
+  reLen4: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 4) {
+      return value.substring(0,4)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen6: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 6) {
+      return value.substring(0,6)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen8: function(value) {
+    if (value.length > 8) {
+      return value.substring(0,8)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen10: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 10) {
+      return value.substring(0,10)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen12: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 12) {
+      return value.substring(0,12)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen16: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 16) {
+      return value.substring(0,16)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen18: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 18) {
+      return value.substring(0,18)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen20: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 20) {
+      return value.substring(0,20)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen24: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 24) {
+      return value.substring(0,24)+'…'
+    } else {
+      return value
+    }
+  },
+  reLen80: function(value) {
+    if (value == undefined && value == null) {
+      return false
+    }
+    if (value.length > 80) {
+      return value.substring(0,80)+'…'
+    } else {
+      return value
+    }
+  },
+}
+
+module.exports = {   
+  toFix: filters.toFix,
+  toStr: filters.toStr,
+  toNum: filters.toNum,
+  reLen4: relength.reLen4,
+  reLen6: relength.reLen6,
+  reLen8: relength.reLen8,
+  reLen10: relength.reLen10,
+  reLen12: relength.reLen12,
+  reLen16: relength.reLen16,
+  reLen18: relength.reLen18,
+  reLen20: relength.reLen20,
+  reLen24: relength.reLen24,
+  reLen80: relength.reLen80,
+}

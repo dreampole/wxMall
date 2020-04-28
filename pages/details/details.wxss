@@ -1,0 +1,459 @@
+/* pages/details/details.wxss */
+.details-page {
+  width: 100%;
+  background-color: #eee;
+}
+/* 顶部自定义 */
+.details-page .topbar{
+  position: fixed;
+  top:0;left:0;
+  width:100%;
+  height: 140rpx;
+  background-color: rgba(0,0,0,0);
+  z-index: 998;
+}
+.details-page .topbar .title{
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  padding-top: 35rpx;
+}
+.details-page .backbtn{
+  position: absolute;
+  top:66rpx;left:20rpx;
+  width: 100rpx;height: 60rpx;
+  background-color: rgba(239,239,239,0.9);
+  border-radius: 30rpx;
+  border: 1px solid #ccc;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.details-page .backbtn icon{
+  font-size: 36rpx;
+  margin-top: -10rpx;
+}
+/* 产品图片 */
+.details-page .swiper{
+  width: 100%;
+}
+.details-page .swiper swiper{
+  width: 100%;
+  height: 750rpx;
+  position: relative;
+}
+.details-page .swiper swiper image{
+  width: 100%;
+  height: 100%;
+}
+.details-page .swiper swiper .swiper-page {
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+  padding: 5rpx 30rpx;
+  border-radius: 30rpx;
+  background-color: rgba(110,110,110,0.5);
+  color: #fff;
+  font-size: 24rpx;
+}
+/* 产品价格及简介 */
+.details-page .info{
+  width: 100%;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom:30rpx;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.details-page .info .price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+}
+.details-page .info .price view:nth-child(1){
+  display: block;
+  font-weight: 900;
+  color: rgb(243, 59, 45);
+}
+.details-page .info .price view:nth-child(1) text:nth-child(1){
+  font-size: 28rpx;
+}
+.details-page .info .price view:nth-child(1) text:nth-child(2){
+  font-size: 48rpx;
+}
+.details-page .info .price view:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #333;
+}
+.details-page .info .price view:nth-child(2) icon{
+  font-size: 36rpx;
+  margin-right: 5rpx;
+}
+.details-page .info .price view:nth-child(2) text{
+  font-size: 24rpx;
+}
+.details-page .info .description{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.details-page .info .description{
+  font-size: 32rpx;
+  font-weight: 900;
+  margin: 10rpx 0;
+}
+/* 选择型号规格 */
+.details-page .selected{
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  border-radius: 15rpx;
+  padding: 20rpx;
+}
+.details-page .selected view{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+}
+.details-page .selected view.item{
+  border-bottom: 1px solid #eee;
+  padding-bottom:30rpx;
+  position: relative;
+}
+.details-page .selected view.item text:nth-child(1){
+  font-size: 30rpx;
+  font-weight: 900;
+}
+.details-page .selected view.item text:nth-child(2){
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.details-page .selected view.item icon{
+  position: absolute;
+  top:0;right:10rpx;
+  font-weight: 900;
+}
+.details-page .selected .rights{
+  display: block;
+}
+.details-page .selected .rights view{
+  display: inline-block;
+  width: 220rpx;
+  margin:0;
+  padding:0;
+}
+.details-page .selected .rights view icon{
+  color: rgb(0, 152, 207);
+}
+.details-page .selected .rights view text{
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #666;
+}
+/* 产品附加属性：介绍图片，包装清单，注意事项质保期等 */
+.details-page .introduce{
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  border-radius: 15rpx;
+}
+.details-page .introduce .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.details-page .introduce .title view text{ 
+  font-size: 24rpx;
+}
+.details-page .introduce .title view text.active{ 
+  font-size: 28rpx;
+  font-weight: 900;
+  padding-bottom:10rpx;
+  border-bottom: 3px solid rgb(0, 152, 207); 
+}
+.details-page .introduce .additions{
+  padding: 20rpx 0;
+}
+.details-page .introduce .additions view{
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
+}
+.details-page .introduce .additions view.image{
+  padding: 0;
+}
+.details-page .introduce .additions view.image image{
+  width:100%;
+  height:100%;
+}
+.details-page .introduce .additions view.table view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding:0;
+  text-align: center;
+}
+.details-page .introduce .additions view.table .title{
+  border:1px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  padding:15rpx;
+  font-size: 28rpx;
+}
+.details-page .introduce .additions view.table .br{
+  border-right:1px solid #ccc;
+}
+.details-page .introduce .additions view.table .br view{
+  border:1px solid #ccc;
+  border-top:0;
+  border-right: 0;
+  padding: 15rpx;
+  font-size: 28rpx;
+}
+.details-page .introduce .additions view.saled{
+  padding: 0 30rpx;
+  font-size: 28rpx;
+}
+/* logo */
+.details-page .logo{
+  width: 100%;
+  height: 150rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin-top: -30rpx;
+  margin-bottom: 110rpx;
+}
+.details-page .logo text{
+  color: rgb(0, 152, 207);
+  font-size: 56rpx;
+  font-weight: 900;
+  font-family: '仿宋';
+  text-shadow: 1px 1px 10px #ccc;
+}
+/* 底部工具栏 */
+.details-page .bottombar{
+  position: fixed;
+  bottom:0;left:0;
+  width:100%;
+  height: 110rpx;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px #aaa;
+  display: flex;
+  flex-direction: row;
+  align-items: cneter;
+  justify-content: space-between;
+}
+.details-page .bottombar view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.details-page .bottombar .icon{
+  flex: 1;
+  position: relative;
+}
+.details-page .bottombar .icon icon{
+  color: #333;
+  font-size: 48rpx;
+}
+.details-page .bottombar .icon text{
+  color: #333;
+  font-size: 24rpx;
+}
+.details-page .bottombar .icon text.cart-count{
+  color: #fff;
+  background-color: rgb(253, 63, 67);
+  font-size: 24rpx;
+  position: absolute;
+  top:5rpx;right:15rpx;
+  border-radius: 50%;
+  width: 35rpx;
+  height: 35rpx;
+  text-align: center;
+}
+.details-page .bottombar .btn{
+  flex: 2;
+}
+.details-page .bottombar .btn:nth-child(3){
+  align-items: flex-end;
+}
+.details-page .bottombar .btn:nth-child(4){
+  align-items: flex-start;
+}
+.details-page .bottombar .btn text{
+  padding: 20rpx 45rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #fff;
+  background-color: rgb(248, 156, 49);
+}
+.details-page .bottombar .btn:nth-child(4) text{
+  border-radius: 0 50rpx 50rpx 0;
+  background-color: rgb(253, 63, 67);
+}
+/* 规格数量选择 */
+.details-page .selectview{
+  position: fixed;
+  bottom:0;left:0;
+  width:100%;
+  height: calc(100vh);
+  background-color: rgba(110,110,110,0.5);
+  z-index: 999;
+}
+.details-page .selectview .inner{
+  position: absolute;
+  bottom: 0;left:0;
+  width: 100%;
+  height: 999rpx;
+  background-color: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+}
+.details-page .selectview .inner .title{
+  position: relative;
+  top:0;left:0;
+  width: 100%;
+  height: 300rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.details-page .selectview .inner .title icon{
+  position: absolute;
+  top:12rpx;right: 20rpx;
+  color: #ccc;
+  font-size: 48rpx;
+  text-shadow: 1px 1px 10px #eee;
+}
+.details-page .selectview .inner .title .image{
+  flex:1;
+}
+.details-page .selectview .inner .title .image image{
+  width: 100%;
+  height: 240rpx;
+}
+.details-page .selectview .inner .title .info{
+  flex:2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding:10rpx;
+}
+.details-page .selectview .inner .title .info view:nth-child(1){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: rgb(243, 59, 45);
+  font-weight: 900;
+}
+.details-page .selectview .inner .title .info view:nth-child(1) text:nth-child(1){
+  font-size: 24rpx;
+  margin-bottom: 6rpx;
+}
+.details-page .selectview .inner .title .info view:nth-child(1) text:nth-child(2){
+  font-size: 36rpx;
+}
+.details-page .selectview .inner .title .info view:nth-child(2){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 28rpx;
+}
+.details-page .selectview .inner .content{
+  width: 100%;
+  height:580rpx;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10rpx 30rpx;
+}
+.details-page .selectview .inner .content .model{
+  display: block;
+}
+.details-page .selectview .inner .content .model .title{
+  height: 30rpx;
+  padding: 0;
+  margin-bottom: 20rpx;
+  font-size:28rpx;
+  font-weight: 900;
+  display: block;
+  text-align: left;
+  background-color: #fff;
+}
+.details-page .selectview .inner .content .model text{
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 15rpx 30rpx;
+  margin: 15rpx;
+  background-color: #eee;
+  border-radius: 30rpx;
+}
+.details-page .selectview .inner .content .model text.active{
+  color:rgb(0, 152, 207);
+  background-color: rgba(0, 152, 207, 0.1);
+}
+.details-page .selectview .inner .content .qty{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 60rpx 10rpx;
+}
+.details-page .selectview .inner .content .qty view:nth-child(1){
+  font-size:28rpx;
+  font-weight: 900;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.details-page .selectview .inner .content .qty view:nth-child(2){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.details-page .selectview .inner .content .qty view:nth-child(2) input{
+  width: 60rpx;
+  margin: 0 10rpx;
+  background-color: #eee;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+.details-page .selectview .inner .content .qty view:nth-child(2) text{
+  font-size: 48rpx;
+  width: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -15rpx;
+}
+.details-page .selectview .inner .bottom{
+  width: 100%;
+  height: 110rpx;
+  padding-top: 20rpx;
+}
+.details-page .selectview .inner .bottom button{
+  border-radius: 50rpx;
+  background-color: rgb(253, 63, 67);
+  width: 90%;
+}

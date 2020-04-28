@@ -1,0 +1,107 @@
+/* components/typelist/typelist.wxss */
+@import '/app.wxss';
+.type-list {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 分类 */
+.type-list .type{
+  width: 160rpx; 
+  height:1010rpx;
+} 
+@media screen and (min-height: 800px) {
+  .type-list .type{
+    width: 160rpx; 
+    height:1300rpx;
+  }     
+}
+@media screen and (min-height: 1000px) {
+  .type-list .type{
+    width: 160rpx; 
+    height:675rpx;
+  }     
+}
+.type-list .type view{
+  height: 100rpx;
+  padding:30rpx 0;
+  font-size: 28rpx;
+  color:#666;
+  background-color: #eee;
+}
+.type-list .type view.active{
+  color: rgb(0, 152, 207);
+  font-weight: 900;
+  background-color: #fff;
+}
+/* 商品 */
+.type-list .items{
+  width: 590rpx;
+  height:1000rpx;
+} 
+@media screen and (min-height: 800px) {
+  .type-list .items{
+    width: 590rpx;
+    height:1300rpx;
+  }     
+}
+@media screen and (min-height: 1000px) {
+  .type-list .items{
+    width: 590rpx;
+    height:675rpx;
+  }     
+}
+.type-list .items .inner{
+  width:100%;
+  height: 210rpx;
+  padding: 15rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.type-list .items .inner .image{
+  width: 260rpx;
+  height: 180rpx;
+}
+.type-list .items .inner .image image{
+  width: 100%;
+  height: 100%;
+}
+.type-list .items .inner .text{
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.type-list .items .inner .text view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.type-list .items .inner .text .title{
+  color:#111;
+  font-weight: 900;
+}
+.type-list .items .inner .text .price text:nth-child(1){
+  color: rgb(243, 59, 45);
+  font-weight: 900;
+}
+.type-list .items .inner .text .price text:nth-child(2){
+  color:#666;
+  text-decoration: line-through;
+}
+.type-list .items .inner .text .sale text{
+  font-size: 24rpx;
+  margin-bottom: -25rpx;
+}
+.type-list .items .inner .text .sale icon{
+  color: rgb(0, 152, 207);
+  font-size: 36rpx;
+}

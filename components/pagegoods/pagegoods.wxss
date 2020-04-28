@@ -1,0 +1,30 @@
+/* components/pagegoods/pagegoods.wxss */
+.page-goods {
+  width:100%;
+  background-color: #fff;
+  margin-bottom:110rpx;
+}
+/* topbar */
+.page-goods-topbar {
+  width:100%;
+  height:220rpx;
+  position: fixed;
+  top:0;left:0;
+  background-color:#eee;
+  z-index: 99;
+}
+.page-goods-topbar .title{
+  margin-top:70rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+  color:#111;
+  align-items: flex-start;
+}
+.page-goods-topbar .search-bar{
+  width:100%;
+}
+/* typelist */
+.page-goods-typelist {
+  margin-top:220rpx;
+}

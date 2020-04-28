@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "page-main": "/components/pagemain/pagemain",
+    "page-goods": "/components/pagegoods/pagegoods",
+    "page-recommend": "/components/pagerecommend/pagerecommend",
+    "page-cart": "/components/pagecart/pagecart",
+    "page-mine": "/components/pagemine/pagemine"
+  },
+  "navigationStyle": "custom"
+}

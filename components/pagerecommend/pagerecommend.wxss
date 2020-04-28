@@ -1,0 +1,33 @@
+/* components/pagerecommend/pagerecommend.wxss */
+@import '/app.wxss';
+.page-recommend {
+  background-color: #eee;
+  margin-bottom:110rpx;
+}
+/* topbar */
+.page-recommend-topbar {
+  width:100%;
+  height:220rpx;
+  position: fixed;
+  top:0;left:0;
+  background-color:#eee;
+  z-index: 99;
+}
+.page-recommend-topbar .title{
+  margin-top:70rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+  color:#111;
+  align-items: flex-start;
+}
+.page-recommend-topbar .search-bar{
+  width:100%;
+}
+/* recommend-list */
+.page-recommend-list{
+  margin-top:220rpx;
+  background-color: #fff;
+  display: block;
+  width:100%;
+}

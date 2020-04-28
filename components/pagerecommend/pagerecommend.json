@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "search-bar":"/components/searchbar/searchbar",
+    "recommend-list":"/components/recommendlist/recommendlist"
+  }
+}

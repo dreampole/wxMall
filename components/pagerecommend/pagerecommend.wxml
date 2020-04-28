@@ -1,0 +1,12 @@
+<!--components/pagerecommend/pagerecommend.wxml-->
+<scroll-view class="page-recommend">
+  <view class="page-recommend-topbar">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <search-bar class="search-bar" btn1Show="{{false}}" btn2Show="{{true}}" darkColor="{{true}}"></search-bar>
+  </view>
+  <view class="page-recommend-list">
+    <recommend-list id="recommendListInRPage" viewFixed="{{true}}" />
+  </view>
+</scroll-view>

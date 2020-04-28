@@ -1,0 +1,199 @@
+/* pages/search/search.wxss */
+/* 搜索查询 */
+.serach-page {
+  width:100%;
+}
+.search-page .search {
+  position: relative;
+}
+.search-page .search input{
+  width: 80%;
+  margin-top: 20rpx;
+  padding:10rpx 30rpx;
+  border-radius: 50rpx;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+.search-page .search icon{
+  position: absolute;
+  top: 18rpx;right: 65rpx;
+  color:#aaa;
+  z-index: 99;
+}
+.search-page .history{
+  padding:30rpx;
+  color: #333;
+}
+.search-page .history .title{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  position: relative;
+  /* font-family: '仿宋'; */
+}
+.search-page .history .title icon{
+  margin-left: 20rpx;
+  margin-top: -8rpx;
+}
+.search-page .history .title .loadhot{
+  position: absolute;
+  top: 3rpx; right: 0;
+  color: #aaa;
+  font-size: 28rpx;
+}
+.search-page .history .words{
+  display: block;
+  text-align: left;
+}
+.search-page .history .words text{
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  margin: 10rpx;
+  border-radius: 50rpx;
+  background-color: #eee;
+  font-size: 28rpx;
+}
+/* 条件查询 */
+.filter-page {
+  width:100%;
+  background-color: #eee;
+  margin-bottom: 90rpx;
+}
+.filter-page .close{
+  position: fixed;
+  top:0;left:0;
+  width:100%;
+  height: 90rpx;
+  background-color: #fff;
+}
+.filter-page .close view{
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 152, 207);
+  background-color: #eee;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+}
+.filter-page .close view icon{
+  font-size:36rpx;
+  margin-right: 10rpx;
+  margin-top: -10rpx;
+}
+.filter-page .conditions-price{
+  width: 100%;
+}
+.filter-page .conditions-price view{
+  margin-bottom:30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  display: block;
+}
+.filter-page .conditions-price view .title{
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.filter-page .conditions-price view .input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.filter-page .conditions-price view .input input{
+  padding:15rpx 30rpx;
+  border-radius: 10rpx;
+  color: #666;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+.filter-page .conditions-price view .input text{
+  margin:0 15rpx;
+  color:#ccc;
+}
+.filter-page .conditions-price view .pricebtn{
+  padding: 0;
+  display: block;
+}
+.filter-page .conditions-price view .pricebtn text{
+  display: inline-block;
+  margin: 15rpx;
+  padding:15rpx 50rpx;
+  border-radius: 10rpx;
+  color: #666;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+.filter-page .conditions-price view .pricebtn .active{
+  color: #fff;
+  background-color: rgb(0, 152, 207);
+}
+.filter-page .conditions{
+  width: 100%;
+}
+.filter-page .conditions view{
+  margin-bottom:30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  display: block;
+}
+.filter-page .conditions view .title{
+  display: block;
+  margin: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.filter-page .conditions view .words{
+  display: inline-block;
+  margin: 15rpx;
+  padding:15rpx 50rpx;
+  border-radius: 10rpx;
+  color: #666;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+.filter-page .conditions view .words.active{
+  color: #fff;
+  background-color: rgb(0, 152, 207);
+}
+.filter-page .btn{
+  width:100%;
+  height: 90rpx;
+  position: fixed;
+  bottom:0;left:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 10px #ccc;
+}
+.filter-page .btn view {
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: #fff;
+}
+.filter-page .btn view:nth-child(2){
+  color: #fff;
+  background-color: rgb(0, 152, 207);
+}
+/* 查询结果 */
+.result-page {
+  width:100%;
+}
+@import '/components/searchbar/searchbar.wxss';
+.search-bar {
+  position: fixed;
+  top: 0;left:0;
+  background-color: #eee;
+}
+.search-bar .search icon{
+  color: #ccc;
+  margin-left: 8rpx;
+}
+.item-list {
+  width:100%;
+}

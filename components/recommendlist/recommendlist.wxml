@@ -1,0 +1,35 @@
+<!--components/recommendlist/recommendlist.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="recommend-list">
+  <scroll-view id="typeView" class="type {{viewFixed?'view-fixed':''}}" scroll-x scroll-left="{{scrollLeft}}">
+    <view wx:for="{{listType}}" wx:key="id" data-id="{{item.id}}" class="{{item.active?'active':''}}" bindtap="switchType">
+      <text>{{item.text}}</text>
+      <text>{{item.tip}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="items" scroll-y style="margin-top:{{viewMTop}}">
+    <view class="inner">
+      <view wx:for="{{listItems[0]}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetails">
+        <view class="image">
+          <image src="{{item.imgurl}}"></image>
+        </view>
+        <view class="text">
+          <text>{{item.title}}{{filters.reLen18(item.desc)}}</text>
+          <text>￥{{item.price}}</text>
+          <!-- <text>{{item.title}}</text> -->
+        </view>
+      </view>
+    </view>
+    <view class="inner">
+      <view wx:for="{{listItems[1]}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetails">
+        <view class="image">
+          <image src="{{item.imgurl}}"></image>
+        </view>
+        <view class="text">
+          <text>{{item.title}}{{filters.reLen18(item.desc)}}</text>
+          <text>￥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

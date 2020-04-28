@@ -1,0 +1,31 @@
+<!--components/typelist/typelist.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="type-list">
+  <scroll-view class="type" scroll-y scroll-top="{{scrollTop}}">
+    <view wx:for="{{listType}}" wx:key="id" data-id="{{item.id}}" class="{{item.active?'active':''}}" bindtap="switchType">
+      <text>{{item.text}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="items" scroll-y>
+    <view class="inner" wx:for="{{listItems}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetails">
+      <view class="image">
+        <image src="{{item.imgurl}}"></image>
+      </view>
+      <view class="text">
+        <view class="title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="price">
+          <text>￥{{filters.toFix(item.price)}}</text>
+          <text>原价￥{{filters.toFix(item.price*1.5)}}</text>
+        </view>
+        <view class="sale">
+          <text>已售{{item.sellqty}}</text>
+          <icon class="iconfont iconic_jiarugouwuche0000000" 
+                  data-title="{{item.title}}" 
+                  bindtap="addCart"></icon>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

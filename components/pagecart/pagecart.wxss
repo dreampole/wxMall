@@ -1,0 +1,243 @@
+/* components/pagecart/pagecart.wxss */
+@import '/app.wxss';
+.page-cart {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  margin-bottom:110rpx;
+  position: relative;
+}
+/* 顶部标题栏 */
+.page-cart-topbar {
+  width:100%;
+  height:140rpx;
+  position: fixed;
+  top:0;left:0;
+  background-color:#fff;
+  z-index: 99;
+}
+.page-cart-topbar .title{
+  margin-top:70rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+  color:#111;
+  align-items: flex-start;
+}
+/* 购物车商品列表 */
+.page-cart .list{
+  display: block;
+  width: 100%;
+  padding-top: 150rpx;
+  height: calc(100vh - 200rpx);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.page-cart .list .nullview{
+  width: 100%;
+}
+.page-cart .list .nullview icon{
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  color: #ccc;
+  font-size: 128rpx;
+  padding: 30rpx;
+  margin-top: 90rpx;
+}
+.page-cart .list .nullview text{
+  color: #ccc;
+  font-size: 30rpx;
+  font-weight: 900;
+  margin: 30rpx;
+}
+.page-cart .list .item{
+  width: 100%;
+  height: 300rpx;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+}
+.page-cart .list .item view{
+  width: 100%;
+  /* border:1px solid red; */
+}
+.page-cart .list .item .select{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page-cart .list .item .select{
+  color: #999;
+}
+.page-cart .list .item .image{
+  flex: 4;
+  height: 240rpx;
+}
+.page-cart .list .item .image image{
+  width: 100%;
+  height: 100%;
+}
+.page-cart .list .item .info{
+  flex: 7;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-cart .list .item .info .text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 28rpx;
+}
+.page-cart .list .item .info .number{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.page-cart .list .item .info .number view:nth-child(1){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.page-cart .list .item .info .number view:nth-child(1) text{
+  color: rgb(243, 59, 45);
+  font-weight: 900;
+}
+.page-cart .list .item .info .number view:nth-child(1) text:nth-child(1){
+  font-size: 24rpx;
+  margin-bottom: 5rpx;
+}
+.page-cart .list .item .info .number view:nth-child(2){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.page-cart .list .item .info .number view:nth-child(2) input{
+  width: 60rpx;
+  margin: 0 10rpx;
+  background-color: #eee;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+.page-cart .list .item .info .number view:nth-child(2) text{
+  font-size: 48rpx;
+  width: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page-cart .list .item .expand{
+  position: absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  background-color: rgba(110,110,110,0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page-cart .list .item .expand text{
+  width: 160rpx;
+  height:160rpx;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #eee;
+  margin: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page-cart .list .item .expand text:nth-child(1){
+  background-color: rgb(79, 190, 253);
+}
+.page-cart .list .item .expand text:nth-child(2){
+  background-color: rgb(248, 156, 49);
+}
+.page-cart .list .item .expand text:nth-child(3){
+  background-color: rgb(243, 59, 45);
+}
+/* 底部工具栏 */
+.page-cart .bottombar{
+  position: absolute;
+  bottom:0;left:0;
+  width:100%;height:110rpx;
+  box-shadow: 1px 1px 10px #ccc;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-cart .bottombar view:nth-child(1){
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 24rpx;
+  color:#999;
+}
+.page-cart .bottombar view:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 24rpx;
+  color:#999;
+}
+.page-cart .bottombar view:nth-child(2) icon{
+  font-size: 32rpx;
+  color: rgb(243, 59, 45);
+}
+.page-cart .bottombar view:nth-child(3){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex:10;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+.page-cart .bottombar view:nth-child(3) text:nth-child(2){
+  font-size: 30rpx;
+  color: rgb(243, 59, 45);
+}
+.page-cart .bottombar view:nth-child(3) text:nth-child(3){
+  font-size: 24rpx;
+  font-weight: 300;
+  padding: 10rpx;
+}
+.page-cart .bottombar view:nth-child(3) text:nth-child(4){
+  width: 200rpx;
+  height: 100%;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: rgb(0, 152, 207);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page-cart .bottombar view:nth-child(3) text:nth-child(4).disable{
+  background-color: rgba(0, 152, 207, 0.4);
+  color: #ddd;
+}

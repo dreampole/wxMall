@@ -1,0 +1,66 @@
+<!--components/itemlist/itemlist.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="item-list">
+  <!-- 排序 -->
+  <view class="item-list-sort" style="top:{{sortTop}}">
+    <view wx:for="{{resultSort}}" 
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="resultSortAction"
+          class="{{item.id == activeSortId?'active':''}}">
+      <text>{{item.name}}<text wx:if="{{item.id == activeSortId}}">{{sortArrow}}</text></text>
+    </view>
+  </view>
+  <!-- 搜索结果为空 -->
+  <view class="item-list-null" wx:if="{{resultNull}}">
+    <text>暂未找到相关商品</text>
+  </view>
+  <!-- 单列显示 -->
+  <scroll-view class="item-list-result" style="margin-top:{{listMTop}};padding-top:{{listPTop}}" wx:if="{{listRow == 1}}">
+    <view class="item" wx:for="{{searchResult}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetails">
+      <view class="img">
+        <image src="{{item.imgurl}}"/>
+      </view>
+      <view class="info">
+        <view class="info-title">
+          <text>{{item.title}}</text>  
+        </view>
+        <view class="info-price">
+          <text>￥{{filters.toFix(item.price)}}</text>
+          <text>原价￥{{filters.toFix(item.price*1.5)}}</text>
+        </view>
+        <view class="info-sale">
+          <text>已售{{item.sellqty}}</text>
+          <icon class="iconfont iconic_jiarugouwuche0000000" 
+                data-title="{{item.title}}" 
+                bindtap="addCart"></icon>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 双列显示 -->
+  <scroll-view class="item-list-result" style="margin-top:{{listMTop}};padding-top:{{listPTop}}" wx:if="{{listRow == 2}}">
+    <view class="item2" wx:for="{{searchResult}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetails">
+      <view class="inner">
+        <view class="img">
+          <image src="{{item.imgurl}}"/>
+        </view>
+        <view class="info">
+          <view class="info-title">
+            <text>{{item.title}}</text>  
+          </view>
+          <view class="info-price">
+            <text>￥{{filters.toFix(item.price)}}</text>
+            <text>原价￥{{filters.toFix(item.price*1.5)}}</text>
+          </view>
+          <view class="info-sale">
+            <text>已售{{item.sellqty}}</text>
+            <icon class="iconfont iconic_jiarugouwuche0000000" 
+                  data-title="{{item.title}}" 
+                  bindtap="addCart"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

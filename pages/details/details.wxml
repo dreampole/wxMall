@@ -1,0 +1,140 @@
+<!--pages/details/details.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="details-page">
+  <view class="topbar">
+    <view class="title" wx:if="{{topbarShow}}">
+      <text>商品详情</text>
+    </view>
+    <view class="backbtn" bindtap="goBack">
+      <icon class="iconfont iconfanhui1"></icon>
+    </view>
+  </view>
+  <view class="swiper">
+    <swiper autoplay="{{false}}" indicator-dots="{{false}}" indicator-active-color="rgb(0,152,207)">
+      <swiper-item wx:for="{{details.product_images}}" wx:key="iNo">
+        <image src="{{item.img_url}}"></image>
+        <text class="swiper-page">{{item.iNo}}/{{details.product_images.length}}</text>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="info">
+    <view class="price">
+      <view>
+        <text>￥</text>
+        <text>{{filters.toFix(priceMain)}}</text>
+      </view>
+      <view bindtap="itemCollect">
+        <block wx:if="{{collectStatus}}">
+          <icon class="iconfont iconshoucang-" style="color: rgb(0, 152, 207);margin-right:15rpx;"></icon>
+          <text>已收藏</text>
+        </block>
+        <block wx:else>
+          <icon class="iconfont iconshoucang1"></icon>
+          <text>收藏</text>
+        </block>
+      </view>
+    </view>
+    <view class="description">
+      <text>{{details.name}} {{details.description}} {{selectedItem.info}}</text>
+    </view>
+  </view>
+  <view class="selected">
+    <view class="item">
+      <text>已选</text>
+      <text bindtap="showSelectView">{{filters.reLen20(selectedItem.info)}}，数量{{selectedItem.qty}}</text>
+      <icon class="iconfont icongengduo"></icon>
+    </view>
+    <view class="rights">
+      <view wx:for="{{itemRights}}" wx:key="id">
+        <icon class="iconfont iconduihao"></icon>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="introduce">
+    <view class="title">
+      <view wx:for="{{introduceTitle}}" wx:key="id" data-id="{{item.id}}" bindtap="switchIntroduce">
+        <text class="{{introduceIndex == item.id?'active':''}}">{{item.title}}</text>
+      </view>
+    </view>
+    <view class="additions" wx:if="{{introduceIndex == 1}}">
+      <view class="image" wx:for="{{productIntroductionImgs}}" wx:key="iNo">
+        <image src="{{item.img_url}}" bindload="pdcImageLoad" data-iNo="{{item.iNo}}" style=" height:{{item.height}}rpx;"></image>
+      </view>
+    </view>
+    <view class="additions" wx:if="{{introduceIndex == 2}}">
+      <view class="table" wx:for="{{details.product_additions}}" wx:key="param_type">
+        <view class="title">
+          <text>{{item.param_type}}</text>
+        </view>
+        <view class="br" wx:for="{{item.param_data}}" wx:key="Tag">
+          <view><text>{{item.Tag}}</text></view>
+          <view><text>{{item.Value}}</text></view>
+        </view>
+      </view>
+    </view>
+    <view class="additions" wx:if="{{introduceIndex == 3}}">
+      <view class="saled">
+        <text>{{saledText}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="logo">
+    <text>Logo</text>
+  </view>
+  <view class="bottombar">
+    <view class="icon" bindtap="goMainPage">
+      <icon class="iconfont iconshouye"></icon>
+      <text>主页</text>
+    </view>
+    <view class="icon" bindtap="goCartPage">
+      <icon class="iconfont icongouwuche"></icon>
+      <text>购物车</text>
+      <text class="cart-count" wx:if="{{cartCount != null && cartCount >0}}">{{cartCount}}</text>
+    </view>
+    <view class="btn">
+      <text data-f="cart" bindtap="showSelectView">加入购物车</text>
+    </view>
+    <view class="btn">
+      <text bindtap="settleAccounts">立即购买</text>
+    </view>
+  </view>
+  <view class="selectview" wx:if="{{selectviewShow}}">
+    <view class="inner">
+      <view class="title">
+        <icon class="iconfont iconshanchu" bindtap="closeSelectView"></icon>
+        <view class="image">
+          <image src="{{selectedItem.imgUrl}}"></image>
+        </view>
+        <view class="info">
+          <view>
+            <text>￥</text>
+            <text>{{filters.toFix(selectedItem.price)}}</text>
+          </view>
+          <view>
+            <text>{{selectedItem.info}}，数量{{selectedItem.qty}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <view class="model">
+          <text class="title">颜色规格</text>
+          <text wx:for="{{selectItems}}" wx:key="id" data-id="{{item.id}}" bindtap="selectItem" class="{{item.active?'active':''}}">{{item.info}}</text>
+        </view>
+        <view class="qty">
+          <view>
+            <text>数量</text>
+          </view>
+          <view>
+            <text bindtap="qryMinus">-</text>
+            <input type="number" value="{{selectedQty}}" bindinput="qtyInput"/>
+            <text bindtap="qryPlus">+</text>
+          </view>
+        </view>
+      </view>
+      <view class="bottom" wx:if="{{btnShow}}">
+        <button type="primary" bindtap="joinToCart">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<!--components/pagecart/pagecart.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="page-cart" bindtap="closeExpandFun">
+  <view class="page-cart-topbar">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+  </view>
+  <view class="list">
+    <view class="nullview" wx:if="{{cartInfo == null || cartInfo.length <=0}}">
+      <icon class="iconfont icongouwuche"></icon>
+      <text>购物车里啥也没有</text>
+    </view>
+    <view class="item" wx:for="{{cartInfo}}" wx:key="ino" data-ino="{{item.ino}}" bindlongpress="showExpandFun">
+      <view class="select" data-ino="{{item.ino}}" bindtap="selectItemCart">
+        <icon wx:if="{{item.active}}" style="color:rgb(0, 152, 207)" class="iconfont iconxuanzhong"></icon>
+        <icon wx:else class="iconfont iconxbwxz"></icon>
+      </view>
+      <view class="image" data-id="{{item.id}}" data-ino="{{item.ino}}" bindtap="goDetails">
+        <image src="{{item.imgUrl}}"></image>
+      </view>
+      <view class="info">
+        <view class="text" data-id="{{item.id}}" data-ino="{{item.ino}}" bindtap="goDetails">
+          <text>{{filters.reLen24(item.name)}} {{filters.reLen24(item.description)}} {{filters.reLen24(item.info)}}</text>
+        </view>
+        <view class="number">
+          <view>
+            <text>￥</text>
+            <text>{{filters.toFix(item.price)}}</text>
+          </view>
+          <view>
+            <text data-ino="{{item.ino}}" bindtap="qryMinus">-</text>
+            <input data-ino="{{item.ino}}" type="number" value="{{item.qty}}" bindinput="qtyInput"/>
+            <text data-ino="{{item.ino}}" bindtap="qryPlus">+</text>
+          </view>
+        </view>
+      </view>
+      <view class="expand" wx:if="{{item.showExpand}}">
+        <text data-ino="{{item.ino}}" catchtap="searchConform">查相似</text>
+        <text data-ino="{{item.ino}}" catchtap="searchAssort">查配套</text>
+        <text data-ino="{{item.ino}}" catchtap="removeCart">删除</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottombar">
+    <view bindtap="selectAllCart">
+      <icon wx:if="{{selectAll}}" style="color:rgb(0, 152, 207)" class="iconfont iconxuanzhong"></icon>
+      <icon wx:else class="iconfont iconxbwxz"></icon>
+      <text>全选</text>
+    </view>
+    <view data-ino="all" bindtap="removeCart">
+      <icon class="iconfont iconshanchu1" wx:if="{{selectAll}}"></icon>
+      <text wx:if="{{selectAll}}">清空</text>
+    </view>
+    <view>
+      <text>总计：</text>
+      <text>￥{{filters.toFix(totalAmount)}}</text>
+      <text>(共{{totalQty}}件)</text>
+      <text bindtap="settleAccounts" class="{{totalQty==0?'disable':''}}">去结算</text>
+    </view>
+  </view>
+</view>
+

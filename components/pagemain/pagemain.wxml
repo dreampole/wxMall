@@ -1,0 +1,62 @@
+<!--components/pagemain/pagemain.wxml-->
+<scroll-view class="page-main">
+  <view class="page-main-topbar">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <search-bar class="search-bar" btn1Show="{{false}}" btn2Show="{{true}}" darkColor="{{false}}"></search-bar>
+  </view>
+  <view class="page-main-hotkey">
+    <text>热搜</text>
+    <text class="hot-words" wx:for="{{hotWords}}" wx:key="id" data-word="{{item.word}}" bindtap="hotSearch">{{item.word}}</text>
+  </view>
+  <view class="page-main-gg">
+    <swiper autoplay="true" indicator-dots="true" indicator-active-color="rgb(0,152,207)">
+      <swiper-item wx:for="{{ggImgs}}" wx:key="id">
+        <image src="{{item.url}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- <view class="page-main-contact">
+    <view>
+      <image src="{{contactInfo.logo}}"></image>
+    </view>
+    <view>
+      <text>联系我们</text>
+    </view>
+    <view class="icon">
+      <icon bindtap="callMe" class="iconfont iconphone"></icon>
+      <icon bindtap="wxMe" class="iconfont iconxiaochengxu"></icon>
+    </view>
+  </view> -->
+  <!-- <view class="page-main-addr" bindtap="goMap">
+    <view class="text">
+      <icon class="iconfont icondingwei"></icon>
+      <text>{{contactInfo.addr}}</text>
+    </view>
+    <view class="navigator-arrow"></view>
+  </view> -->
+  <view class="page-main-fastbtn">
+    <view class="btn-group">
+      <view  wx:for="{{fastBtn[0]}}" wx:key="id" data-id="{{item.id}}" bindtap="showFastBtn">
+        <text style="background-color:{{item.bgcolor}}">{{item.icon}}</text>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+    <view class="btn-group">
+      <view wx:for="{{fastBtn[1]}}" wx:key="id" data-id="{{item.id}}" bindtap="showFastBtn">
+        <text style="background-color:{{item.bgcolor}}">{{item.icon}}</text>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view> 
+  <!-- <view class="page-main-view">
+    <text class="title2">促  销</text>
+    <view>
+      促销商品列表
+    </view>
+  </view> -->
+  <view class="page-main-view">
+    <recommend-list id="recommendList" viewFixed="{{false}}" />
+  </view>
+</scroll-view>

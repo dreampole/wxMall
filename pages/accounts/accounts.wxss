@@ -1,0 +1,221 @@
+/* pages/accounts/accounts.wxss */
+.accounts-page {
+  width: 100%;
+}
+/* 顶部收货人 */
+.accounts-page .receiver{
+  position: fixed;
+  top:0;left:0;
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 3px dashed rgb(0, 152, 207);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+  background-color: #fff;
+}
+.accounts-page .receiver view:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.accounts-page .receiver view:nth-child(1) text{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-bottom: 10rpx;
+}
+.accounts-page .receiver view:nth-child(1) text:nth-child(1){
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #333;
+}
+.accounts-page .receiver view:nth-child(2){
+  width: 45rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 中间订单信息 */
+.accounts-page .account{
+  width: 100%;
+  background-color: #eee;
+}
+.accounts-page .account .items{
+  margin-top: 150rpx;
+  margin-bottom:30rpx;
+  padding: 25rpx;
+  background-color: #fff;
+}
+.accounts-page .account .items view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rpx;
+  border-bottom: 1px solid #eee;
+}
+.accounts-page .account .items view .image{
+  flex: 1;
+  width: 100%;
+  height: 200rpx;
+  border: 0;
+}
+.accounts-page .account .items view .image image{
+  width: 100%;
+  height: 100%;
+}
+.accounts-page .account .items view .info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex:3;
+  border: 0;
+}
+.accounts-page .account .items view .info view{
+  border: 0;
+  font-size: 24rpx;
+}
+.accounts-page .account .items view .info view:nth-child(2){
+  margin-top:35rpx;
+}
+.accounts-page .account .items view .info view:nth-child(2) text{
+  font-weight: 900;
+  font-size: 32rpx;
+  color: rgb(243, 59, 45);
+}
+.accounts-page .account .items view .info view:nth-child(2) text:nth-child(2){
+  color: #666;
+  font-size: 28rpx;
+  font-weight: 300;
+}
+.accounts-page .account .dispatching{
+  margin-bottom: 30rpx;
+  padding: 25rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.accounts-page .account .dispatching text{
+  flex: 1;
+}
+.accounts-page .account .dispatching picker{
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  font-size: 28rpx;
+  font-weight: 900;
+  color: #666;
+}
+.accounts-page .account .dispatching picker icon{
+  margin-left: 10rpx;
+  margin-right: -20rpx;
+  color: #999;
+  font-weight: 300;
+}
+.accounts-page .account .coupon{
+  margin-bottom: 30rpx;
+  padding: 25rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.accounts-page .account .coupon view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rpx;
+}
+.accounts-page .account .coupon view view{
+  border: 0;
+  flex: 1;
+}
+.accounts-page .account .coupon view view:nth-child(2){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 3;
+  color: #999;
+}
+.accounts-page .account .coupon view view:nth-child(2) icon{
+  margin-left: 10rpx;
+  margin-right: -20rpx;
+}
+.accounts-page .account .cost{
+  margin-bottom: 135rpx;
+  padding: 25rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.accounts-page .account .cost view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+.accounts-page .account .cost view text:nth-child(2){
+  color: rgb(243, 59, 45);
+  font-weight: 900;
+}
+.accounts-page .account .cost view text:nth-child(2).sign{
+  color: rgb(7, 192, 98);
+}
+/* 底部付款栏 */
+.accounts-page .bottombar{
+  position: fixed;
+  bottom: 0;left: 0;
+  width:100%;height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px #ccc;
+}
+.accounts-page .bottombar view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.accounts-page .bottombar view:nth-child(1){
+  align-items: flex-start;
+  justify-content: center;
+  flex: 2;
+  padding: 10rpx 20rpx;
+}
+.accounts-page .bottombar view:nth-child(1) text{
+  font-size: 24rpx;
+  color: #999;
+}
+.accounts-page .bottombar view:nth-child(1) text:nth-child(1){
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+.accounts-page .bottombar view:nth-child(1) text:nth-child(1) text{
+  color: rgb(243, 59, 45);
+}
+.accounts-page .bottombar view:nth-child(1) text:nth-child(2) text{
+  font-size: 24rpx;
+  color: #999;
+}
+.accounts-page .bottombar view:nth-child(2){
+  flex: 1;
+  background-color: rgb(7, 192, 98);
+  font-weight: 900;
+  color: #fff;
+}

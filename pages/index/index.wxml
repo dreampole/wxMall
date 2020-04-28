@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="index {{noScroll?'no-scroll':''}}">
+  <view class="tab-cont">
+    <button bindtap="setLangues" wx:if="{{activeId == 0}}">{{langues}}</button>
+    <page-main id="pageMain" class="tab-cont-page"  wx:if="{{activeId == 1}}"/>
+    <page-goods class="tab-cont-page" wx:if="{{activeId == 2}}"/>
+    <page-recommend id="pageRecommend" class="tab-cont-page" wx:if="{{activeId == 3}}"/>
+    <page-cart bind:comRefreshCart="comRefreshCart" class="tab-cont-page" wx:if="{{activeId == 4}}"/>
+    <page-mine class="tab-cont-page" wx:if="{{activeId == 5}}"/>
+  </view>
+  <view class="tab-bar">
+    <block wx:for="{{tabBar}}" wx:key="id">
+      <view class="{{item.id == activeId?'active':''}}" 
+            data-id="{{item.id}}" data-title="{{item.title}}"    
+            bindtap="switchTab">
+        <text class="cart-count" wx:if="{{item.id == 4 && cartCount >0}}">{{cartCount}}</text>
+        <icon class="{{item.icon}}"></icon>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+/* pages/pay/pay.wxss */
+.pay-page {
+  width:100%;
+  height:calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.pay-page icon{
+  margin-top: 240rpx;
+  font-size: 256rpx;
+  color:rgb(7,192,98);
+}
+.pay-page text{
+  margin: 30rpx;
+  font-weight: 900;
+  color: #666;
+}

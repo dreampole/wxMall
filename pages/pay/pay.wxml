@@ -1,0 +1,5 @@
+<!--pages/pay/pay.wxml-->
+<view class="pay-page">
+  <icon class="iconfont iconxuanzhong"></icon>
+  <text bindtap="goBack">付款成功，返回首页</text>
+</view>

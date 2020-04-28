@@ -1,0 +1,77 @@
+/* components/recommendlist/recommendlist.wxss */
+.recommend-list {
+  width:100%;
+  background-color: #eee;
+}
+/* 类别列表 */
+.recommend-list .type{
+  width: 100%;
+  white-space: nowrap;
+}
+.recommend-list .type view{
+  display: inline-block;
+  margin: 0 10rpx;
+  padding: 10rpx 20rpx;
+  width: 150rpx;
+  text-align: center;
+}
+.recommend-list .type view text{
+  font-weight: 100;
+  display: block;
+}
+.recommend-list .type view text:nth-child(2){
+  font-size: 24rpx;
+  font-weight: 100;
+  color: #999;
+}
+.recommend-list .type view.active text{
+  color:rgb(0,152,207);
+}
+.recommend-list .type view.active text:nth-child(1){
+  font-size: 36rpx;
+  font-weight: 900;
+}
+.view-fixed {
+  position: fixed;
+  top:220rpx;left:0;
+  z-index: 999;
+  background-color: #eee;
+}
+/* 商品列表 */
+.recommend-list .items{
+  width: 100%;
+  background-color: #eee;
+  padding:0 10rpx;
+}
+.recommend-list .items .inner{
+  display: inline-block;
+  width:50%;
+  padding: 8rpx;
+  vertical-align: top;
+}
+.recommend-list .items .inner view{
+  background-color: #fff;
+  margin:15rpx 0;
+  border-radius: 10rpx;
+}
+.recommend-list .items .inner view .text{
+  margin: 0;
+  padding:20rpx 10rpx;
+  align-items: flex-start;
+}
+.recommend-list .items .inner view .text text{
+  margin: 5rpx 0;
+  font-size: 28rpx;
+}
+.recommend-list .items .inner view .text text:nth-child(2){
+  font-weight: 900;
+  color: rgb(243, 59, 45);
+}
+.recommend-list .items .inner view .image{
+  margin:0;
+}
+.recommend-list .items .inner view .image image{
+  width:100%;
+  height:300rpx;
+  border-radius: 15rpx 15rpx 0 0;
+}

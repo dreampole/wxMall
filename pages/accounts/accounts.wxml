@@ -1,0 +1,65 @@
+<!--pages/accounts/accounts.wxml-->
+<wxs src="../../utils/filter.wxs" module="filters"></wxs>
+<view class="accounts-page">
+  <view class="receiver">
+    <view bindtap="showAddr">
+      <text>{{receiver.name}}<text>{{receiver.phone}}</text></text>
+      <text>{{receiver.addr}}</text>
+    </view>
+    <view>
+      <icon class="iconfont icongengduo"></icon>
+    </view>
+  </view>
+  <view class="account">
+    <view class="items">
+      <view wx:for="{{accountItems}}" wx:key="ino">
+        <view class="image">
+          <image src="{{item.imgUrl}}"></image>
+        </view>
+        <view class="info">
+          <view>
+            <text>{{filters.reLen24(item.name)}} {{filters.reLen24(item.description)}} {{filters.reLen24(item.info)}}</text>
+          </view>
+          <view>
+            <text>￥{{filters.toFix(item.price)}}</text>
+            <text>x{{item.qty}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="dispatching">
+      <text>配送服务</text>
+      <picker bindchange="cargoTerminalChange" value="{{cargoTerminalIndex}}" range="{{cargoTerminal}}">
+        <text>{{cargoTerminal[cargoTerminalIndex]}}</text>
+        <icon class="iconfont icongengduo"></icon>
+      </picker>
+    </view>
+    <view class="coupon">
+      <view wx:for="{{couponsInfo}}" wx:key="id">
+        <view>
+          <text>{{item.name}}</text>
+        </view>
+        <view data-name="{{item.name}}" bindtap="showCoupons">
+          <text wx:if="{{item.amount == 0}}" style="font-size:28rpx;">无可用</text>
+          <text wx:else>{{filters.toFix(item.amount)}}</text>
+          <icon class="iconfont icongengduo"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="cost">
+      <view wx:for="{{costInfo}}" wx:key="id">
+        <text>{{item.name}}</text>
+        <text class="{{item.sign == '-'?'sign':''}}">￥{{item.sign}}{{filters.toFix(item.amount)}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottombar">
+    <view>
+      <text>应付金额：<text>￥{{filters.toFix(realAmount)}}</text></text>
+      <text>已优惠：<text>￥{{filters.toFix(preAmount)}}</text></text>
+    </view>
+    <view bindtap="goPay">
+      <text>付款</text>
+    </view>
+  </view>
+</view>
